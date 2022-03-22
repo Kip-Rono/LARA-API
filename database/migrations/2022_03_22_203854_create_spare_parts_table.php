@@ -14,9 +14,9 @@ class CreateSparePartsTable extends Migration
     public function up()
     {
         Schema::create('spare_parts', function (Blueprint $table) {
-            $table->id()->unique();
+            $table->bigIncrements('id');
             $table->string('name');
-            $table->string('part');
+            $table->unsignedDecimal('price', $precision = 10, $scale = 2);
             $table->string('make');
             $table->string('model');
             $table->timestamps();

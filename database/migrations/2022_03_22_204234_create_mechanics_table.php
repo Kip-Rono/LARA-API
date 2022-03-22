@@ -18,8 +18,10 @@ class CreateMechanicsTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('services');
+            $table->integer('service');
             $table->timestamps();
+
+            $table->foreign('service')->references('code')->on('services');
         });
     }
 

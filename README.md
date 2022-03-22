@@ -15,7 +15,24 @@ What the user does...
 * A user can view a mechanic and the services offered
 
 ## Endpoints (APIs)
+### #1. fetch_spare_parts
+Fetches all spare parts with no user input requirement
 
+### #2. save_new_spare_parts
+Saves data entered from form input elements and inserts to database, 
+after checking if it already exits or passes validation
+
+$request_input = ['name', 'price', 'make', 'model']
+
+### #3. save_pair_mechanic_services
+Saves data entered from form input elements and inserts to database, 
+after checking if it already exits or passes validation.
+User selects mechanic and services from a pool of mechanics and services
+
+$request_input = ['mechanic_id', 'name', 'email'' 'service[]']
+
+### #4. fetch_mechanic_services
+Fetches all services offered by a mechanic
 
 ## Installation / Setup instruction
 One can follow the following steps to get the project .......
