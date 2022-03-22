@@ -14,6 +14,8 @@ What the user does...
 * A user can pair a mechanic with the services offered
 * A user can view a mechanic and the services offered
 
+## Endpoints (APIs)
+
 
 ## Installation / Setup instruction
 One can follow the following steps to get the project .......
