@@ -45,6 +45,6 @@ class MechanicsController extends Controller
             ->where('mechanics.id', $mechanic_id)
             ->get();
 
-        return ['mechanis_data' => $data];
+        return ['mechanics_data' => $data];
     }
 }
