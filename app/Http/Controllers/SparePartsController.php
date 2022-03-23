@@ -25,6 +25,7 @@ class SparePartsController extends Controller
             ->count();
 
         if ($spare_count < 0){
+            //pass the arguments/inputs through validation
             $rules = [
                 'name' => 'required|string|min:3|max:255',
                 'price' => 'required|string|min:3|max:255',
@@ -32,6 +33,7 @@ class SparePartsController extends Controller
             ];
             $validator = Validator::make($request->all(), $rules);
             if ($validator->fails()) {
+                //validation failed
                 return redirect('#')
                     ->withInput()
                     ->withErrors($validator);
@@ -44,11 +46,11 @@ class SparePartsController extends Controller
                         'make' => $request->make,
                         'model' => $request->model,
                         'created_at' => date(),
-                        'updated_at' => date(),
+                        'updated_at' =>  date(),
                     ]);
-                    return ['response' => 'Created Successfully'];
+                    return ['response' => 'Spare Part Added Successfully'];
                 }catch (\Exception $e){
-                    return redirect('#')->with('error', 'Fail');
+                    return redirect('#')->with('error', 'Fail ! Try Again');
                 }
             }
         }else{

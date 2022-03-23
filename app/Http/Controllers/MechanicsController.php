@@ -14,8 +14,9 @@ class MechanicsController extends Controller
     {
         try {
             DB::transaction(function () use ($request) {
+                //DB transaction reverts all changes made in db if error occurs midway
                 for ($i = 0; $i < count($request->services); $i++) {
-                    //checks if entry exists ... updates if does and saves otherwise
+                    //checks if entry exists ... updates if it does or saves otherwise
                     Mechanics::updateOrCreate(
                         [
                             //Add unique fields to match here
@@ -30,10 +31,10 @@ class MechanicsController extends Controller
                         ]
                     );
                 }
-                return ['response' => 'Save Successful'];
+                return ['response' => 'Save Service Successful'];
             });
         } catch (\Exception $e){
-            return redirect('#')->with('error', 'Fail');
+            return redirect('#')->with('error', 'Fail ! Try Again');
         }
     }
 
