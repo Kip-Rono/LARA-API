@@ -1,6 +1,6 @@
 # LARA-API
 ## Author
-[Fielden-Rono](https://github.com/Kip-Rono)
+[Fielden Rono](https://github.com/Kip-Rono)
 
 ## Description
 LARA-API is a project made using Laravel framework to explain working MVC with CRUD capabilities
